@@ -5,10 +5,14 @@ import sys
 
 ip_address = "bandit.labs.overthewire.org"
 port = 2220
-username = "bandit3"
-password = "UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK"
+username = "bandit5"
+password = "koReBOKuIDDepwhWk7jZC0RTdopnAYKh"
 
 # ssh = subprocess.call(['ssh', username+"@" + ip_address, "-p", port])
+
+# we know that the file is 1033 bytes and is a file
+# so we can use:
+# find -type f -size 1033c
 
 ssh_client = paramiko.SSHClient()
 ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -18,7 +22,7 @@ ssh_client.connect(hostname=ip_address, username=username,
 print('successfully connected')
 ssh_client.invoke_shell()
 stdin, stdout, stderr = ssh_client.exec_command(
-    'cat ./inhere/.hidden')
+    'cat $(find -type f -size 1033c)')
 print("flag: " + str(stdout.read(), 'utf-8'))
 
 ssh_client.close()
