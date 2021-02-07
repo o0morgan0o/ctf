@@ -1,7 +1,8 @@
 import subprocess
 import sys
+import passwords
 
-password = "cvX2JJa4CFALtqS87jk27qwqGhBM9plV"
+password = "truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk"
 
 ssh = subprocess.call(
-    ['ssh', "bandit8@bandit.labs.overthewire.org", "-p", "2220"])
+    ['ssh', "bandit10@bandit.labs.overthewire.org", "-p", "2220"])
