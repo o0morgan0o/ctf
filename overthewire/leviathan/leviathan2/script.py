@@ -5,8 +5,8 @@ import sys
 from .. import passwords
 
 host = "leviathan.labs.overthewire.org"
-username = "leviathan1"
-password = passwords.password1
+username = "leviathan2"
+password = passwords.password2
 port = 2223
 print("----------------------------")
 print("password for ssh is : " + password)
